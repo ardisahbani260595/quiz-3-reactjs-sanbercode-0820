@@ -1,11 +1,27 @@
 import React from 'react';
-import Index from './Quiz-3/index'
+import { BrowserRouter } from 'react-router-dom';
+
+// components
+import Header from './components/partials/Header';
+import Footer from './components/partials/Footer';
+
+// routes
+import Routes from './Routes';
+
+// context
+import { AuthProvider } from './contexts/Authorization';
+
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <Index />
-    </div>
+    <BrowserRouter>
+      <AuthProvider>
+        <Header />
+        <Routes />
+        <Footer />
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 
